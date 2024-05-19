@@ -1,4 +1,3 @@
-// src/__tests__/prismaMock.ts
 import { PrismaClient } from "@prisma/client";
 import { mockDeep, mockReset, DeepMockProxy } from "jest-mock-extended";
 
@@ -14,3 +13,7 @@ beforeEach(() => {
 });
 
 export const prismaMock = prisma as unknown as DeepMockProxy<PrismaClient>;
+
+afterAll(async () => {
+  await prismaMock.$disconnect();
+});
