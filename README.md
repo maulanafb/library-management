@@ -27,10 +27,16 @@ cp .env.example .env
 
 Run the following Prisma commands to create the database tables and seed the database with initial data (if any):
 
+// for develoment
 ```sh
-npx prisma migrate dev --dev init // for develoment
-npx prisma migrate dev --test init // for unit test
+npx prisma migrate dev --dev init 
 ```
+
+// for unit test
+```sh
+npx prisma migrate dev --test init 
+```
+
 ### 4. Start the server
 ```sh
 npm run dev
