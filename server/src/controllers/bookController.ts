@@ -1,4 +1,3 @@
-// src/controllers/bookController.ts
 import { Request, Response } from "express";
 import bookService from "../services/bookService";
 

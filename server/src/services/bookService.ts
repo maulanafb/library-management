@@ -25,11 +25,25 @@ const createBook = async (data: any) => {
   });
 };
 
-const updateBook = async (id: number, data: any) => {
-  return await prisma.book.update({
-    where: { id },
-    data,
-  });
+export const updateBook = async (id: number, data: any) => {
+  const { title, author, description, pages, coverImage, categoryId } = data;
+
+  try {
+    const updatedBook = await prisma.book.update({
+      where: { id },
+      data: {
+        title,
+        author,
+        description,
+        pages,
+        coverImage,
+        categoryId,
+      },
+    });
+    return updatedBook;
+  } catch (error) {
+    throw new Error("Failed to update book");
+  }
 };
 
 const deleteBook = async (id: number) => {

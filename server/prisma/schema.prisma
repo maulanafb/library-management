@@ -14,7 +14,7 @@ generator client {
 }
 
 model Book {
-  id          Int      @id 
+  id          Int      @id @default(autoincrement())
   title       String
   author      String
   description String
@@ -25,7 +25,7 @@ model Book {
 }
 
 model Category {
-  id    Int    @id 
+  id    Int    @id   @default(autoincrement())
   name  String
   books Book[]
 }
