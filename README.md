@@ -30,8 +30,9 @@ Run the following Prisma commands to create the database tables and seed the dat
 ```sh
 npx prisma migrate dev --dev init // for develoment
 npx prisma migrate dev --test init // for unit test
-### 4. Start the server
 ```
-
-npm start
+### 4. Start the server
+```sh
+npm run dev
+```
 The server will start on http://localhost:5000.
