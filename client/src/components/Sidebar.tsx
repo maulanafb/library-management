@@ -13,6 +13,11 @@ const Sidebar = () => {
         Library Management
       </div>
       <ul className="flex-1">
+        <li className={`p-4 ${isActive("/") ? "text-yellow-300" : ""}`}>
+          <NavLink to="/" className="hover:text-yellow-300">
+            Dashboard 🏡
+          </NavLink>
+        </li>
         <li className={`p-4 ${isActive("/books") ? "text-yellow-300" : ""}`}>
           <NavLink to="/books" className="hover:text-yellow-300">
             Books 📚

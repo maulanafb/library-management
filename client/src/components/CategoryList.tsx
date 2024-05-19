@@ -29,27 +29,24 @@ const CategoryList = () => {
       );
 
       if (response.ok) {
-        // Jika berhasil, hapus kategori dari daftar
         setCategories(
           categories.filter((category) => category.id !== deleteCategoryId)
         );
       } else {
-        // Tangani kesalahan dari respons
         const responseData = await response.json();
         throw new Error(responseData.error);
       }
     } catch (error: any) {
       console.error("Error deleting category:", error);
-      // Tampilkan pesan kesalahan
+
       setErrorMessage(error.message);
     } finally {
-      // Setel kembali `deleteCategoryId` ke `null`
       setDeleteCategoryId(null);
     }
   };
 
   const handleCloseErrorModal = () => {
-    setErrorMessage(null); // Sembunyikan pesan kesalahan
+    setErrorMessage(null);
   };
 
   return (
